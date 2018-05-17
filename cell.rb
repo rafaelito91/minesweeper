@@ -1,7 +1,7 @@
 class Cell
-	BOMB_CELL_CHARACTER = "B"
-	COVERED_CELL_CHARACTER = "X"
-
+	BOMB_CELL_CHARACTER = "#"
+	COVERED_CELL_CHARACTER = "."
+	FLAG_CELL_CHARACTER = "F"
 	attr_accessor :covered
 	attr_accessor :flagged
 	attr_accessor :bomb
@@ -22,6 +22,10 @@ class Cell
 		@bomb == false
 	end
 
+	def flag
+		@flagged = true
+	end
+
 	def is_alone?
 		@safe_value == 0
 	end
@@ -36,13 +40,16 @@ class Cell
 
 	def get_value
 		if is_safe?
-			return @safe_value.to_s
+			return @safe_value == 0 ? " " : @safe_value.to_s
 		else
 			return BOMB_CELL_CHARACTER
 		end
 	end
 
 	def get_value_for_game
+		if @flagged
+			return FLAG_CELL_CHARACTER
+		end
 		if @covered
 			return COVERED_CELL_CHARACTER
 		else
@@ -55,6 +62,9 @@ class Cell
 			if @bomb
 				return BOMB_CELL_CHARACTER
 			else
+				if @flagged
+					return FLAG_CELL_CHARACTER
+				end
 				return COVERED_CELL_CHARACTER
 			end
 		else
