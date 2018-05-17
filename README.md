@@ -15,7 +15,7 @@ Requisitos extras
 - O jogo não permitirá a criação de um tabuleira no qual todas as posições estão preenchidas com bombas
 - O jogo não permitirá jogadas serem executadas em coordenadas que estejam fora dos limites do tabuleiro
 
-####################################################################################################
+#############################################################################################
 
 Use requirements. The following programs must be installed on your computer:
 - Ruby
@@ -24,7 +24,7 @@ Use requirements. The following programs must be installed on your computer:
 To play:
 - (1) Clone this repository "git clone https://github.com/rafaelito91/minesweeper.git"
 - (2) Access the cloned repository folder
-- (3) Execute "ruby main.rb" and follow game`s instructions
+- (3) Execute "ruby main.rb" and follow game's instructions
 
 To test execution
 - As described in the section above, follow steps 1 and 2 (if you have not yet executed them)
